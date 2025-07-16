@@ -1,66 +1,62 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ManajamenBuku (LibraryHub)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Nama Proyek
+**ManajamenBuku (LibraryHub)** adalah sistem manajemen perpustakaan digital berbasis Laravel yang memudahkan pengelolaan koleksi buku, anggota, peminjaman, dan administrasi perpustakaan secara modern.
 
-## About Laravel
+## Fitur Utama
+1. **Autentikasi & Registrasi**
+   - **Login**: Pengguna dapat login menggunakan email, password, dan captcha. Setelah login, pengguna diarahkan ke dashboard sesuai peran (admin/user).
+   - **Logout**: Pengguna dapat keluar dari sesi.
+   - **Registrasi**: Pengguna baru dapat mendaftar sebagai anggota (role: user).
+   - **Ganti Password**: Pengguna dapat mengganti password melalui halaman profil.
+2. **Dashboard**
+   - **Admin Dashboard**: Menampilkan statistik jumlah buku, anggota, peminjaman, buku belum dikembalikan, peminjaman terbaru, dan buku terpopuler.
+   - **User Dashboard**: Menampilkan koleksi buku terbaru, fitur pencarian, dan filter kategori.
+3. **Manajemen Buku**
+   - **Lihat Daftar Buku**: Admin dan user dapat melihat daftar buku, dengan fitur pencarian dan filter kategori.
+   - **Tambah Buku**: Admin dapat menambah buku baru, termasuk upload gambar.
+   - **Edit Buku**: Admin dapat mengedit data buku.
+   - **Hapus Buku**: Admin dapat menghapus buku.
+   - **Cetak Daftar Buku (PDF)**: Admin dapat mencetak daftar buku ke PDF.
+4. **Manajemen Kategori**
+   - **Lihat Daftar Kategori**: Admin dapat melihat semua kategori beserta jumlah bukunya.
+   - **Tambah Kategori**: Admin dapat menambah kategori baru.
+   - **Edit Kategori**: Admin dapat mengedit kategori.
+   - **Hapus Kategori**: Admin dapat menghapus kategori (tidak bisa jika masih ada buku di kategori tersebut).
+5. **Manajemen Anggota**
+   - **Lihat Daftar Anggota**: Admin dapat melihat semua anggota.
+   - **Tambah Anggota**: Admin dapat menambah anggota baru.
+   - **Edit Anggota**: Admin dapat mengedit data anggota.
+   - **Hapus Anggota**: Admin dapat menghapus anggota.
+6. **Manajemen Peminjaman Buku**
+   - **Lihat Daftar Peminjaman**: Admin dapat melihat semua data peminjaman.
+   - **Tambah Peminjaman**: Admin dapat mencatat peminjaman buku untuk anggota.
+   - **Edit Peminjaman**: Admin dapat mengedit data peminjaman.
+   - **Hapus Peminjaman**: Admin dapat menghapus data peminjaman.
+   - **Peminjaman oleh User**: User dapat meminjam buku sendiri, sistem otomatis membuat data anggota jika belum ada.
+   - **Lihat Riwayat Peminjaman User**: User dapat melihat daftar buku yang pernah dipinjam.
+   - **Batalkan Peminjaman**: User dapat membatalkan peminjaman yang belum dikembalikan.
+7. **Profil Pengguna**
+   - **Lihat Profil**: Pengguna dapat melihat profilnya.
+   - **Edit Profil**: Pengguna dapat mengubah nama dan email.
+   - **Ganti Password**: Pengguna dapat mengganti password.
+8. **Halaman Statis**
+   - **Beranda (Landing Page)**: Menampilkan highlight fitur, koleksi buku terbaru, dan kategori.
+   - **Tentang Perpustakaan**: Menjelaskan visi dan misi perpustakaan.
+9. **Fitur Tambahan**
+   - **Captcha**: Digunakan pada form login untuk keamanan.
+   - **Navigasi Dinamis**: Menu navigasi menyesuaikan peran user (admin/user/tamu).
+   - **Upload Gambar Buku**: Buku dapat memiliki gambar sampul.
+   - **Statistik & Laporan**: Dashboard admin menampilkan statistik dan laporan singkat.
+10. **Middleware & Role**
+    - **Role Middleware**: Mengatur akses halaman berdasarkan peran (admin/user).
+    - **Autentikasi Middleware**: Mengatur akses halaman hanya untuk user yang sudah login.
+11. **Fitur Lain**
+    - **Validasi Data**: Semua form menggunakan validasi Laravel.
+    - **Notifikasi Sukses/Error**: Setelah aksi (tambah/edit/hapus), user mendapat notifikasi.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Kesimpulan:**
+Website ini adalah sistem manajemen perpustakaan digital dengan fitur lengkap: autentikasi, manajemen buku, kategori, anggota, peminjaman, dashboard statistik, profil pengguna, dan halaman statis. Hak akses diatur berdasarkan peran (admin/user), dan terdapat fitur keamanan seperti captcha.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
